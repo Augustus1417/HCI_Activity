@@ -24,7 +24,7 @@
         <a href="#about">About</a>
       </div>
       <div class="nav-actions">
-        <button class="icon-button" id="header-search-button" aria-label="Focus fragrance search">⌕</button>
+        <button class="icon-button" id="header-search-button" aria-label="Focus fragrance search"><span class="search-glyph" aria-hidden="true"></span></button>
         <button class="cart-button" id="cart-button" aria-label="Open shopping bag">Bag <span class="cart-count" id="cart-count">0</span></button>
       </div>
     </nav>
@@ -35,7 +35,7 @@
       <div class="hero-content container">
         <p class="eyebrow">The art of presence</p>
         <h1>Find the scent<br><em>that lingers.</em></h1>
-        <p class="hero-copy">Small-batch fragrances composed with rare ingredients, quiet confidence, and a little bit of wonder.</p>
+        <p class="hero-copy">Popular fragrances, thoughtfully curated for quiet confidence and a little bit of wonder.</p>
         <a class="button button-dark" href="#shop">Explore fragrances <span>→</span></a>
       </div>
       <div class="hero-orbit orbit-one"></div>
@@ -58,7 +58,7 @@
       <div class="catalog-toolbar">
         <div class="search-wrap">
           <label for="search-input">Search fragrances</label>
-          <div class="search-field"><span>⌕</span><input id="search-input" type="search" placeholder="Search by name, brand, or category"><button id="clear-search" class="clear-search" type="button" aria-label="Clear search" hidden>×</button></div>
+          <div class="search-field"><span class="search-glyph" aria-hidden="true"></span><input id="search-input" type="search" placeholder="Search by name, brand, or category"><button id="clear-search" class="clear-search" type="button" aria-label="Clear search" hidden>×</button></div>
         </div>
         <div class="toolbar-controls">
           <div class="filter-group" role="group" aria-label="Filter by category">
@@ -87,7 +87,7 @@
 
     <section class="about container" id="about">
       <div class="about-image"><div class="about-stamp">A<br><small>FH</small></div></div>
-      <div class="about-copy"><p class="eyebrow">Our philosophy</p><h2>Made slowly.<br><em>Worn forever.</em></h2><p>Aurelia is an independent fragrance house built around the belief that perfume should feel personal, not prescribed. We source responsibly, blend in small batches, and leave room for the story to become yours.</p><a class="text-link" href="#shop">Meet the collection <span>→</span></a></div>
+      <div class="about-copy"><p class="eyebrow">Our mission</p><h2>Curated well.<br><em>Worn forever.</em></h2><p>Aurelia makes fragrance feel personal, not prescribed. We curate popular scents from trusted brands so you can discover familiar favorites and new signatures in one considered collection.</p><a class="text-link" href="#shop">Meet the collection <span>→</span></a></div>
     </section>
   </main>
 
@@ -106,6 +106,7 @@
     <div class="cart-footer" id="cart-footer"></div>
   </aside>
   <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <button class="floating-bag" id="floating-bag" aria-label="Open shopping bag"><span class="bag-glyph" aria-hidden="true"></span><span class="floating-bag-count" id="floating-bag-count">0</span></button>
 
   <div class="modal-backdrop" id="confirmation-modal" hidden><div class="modal confirmation-modal" role="dialog" aria-modal="true" aria-labelledby="confirmation-title"><div class="confirm-mark">?</div><h2 id="confirmation-title">Are you sure?</h2><p id="confirmation-message"></p><div class="modal-actions"><button class="button button-outline" id="confirmation-cancel">Cancel</button><button class="button button-dark" id="confirmation-confirm">Confirm</button></div></div></div>
 

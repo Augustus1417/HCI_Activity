@@ -102,3 +102,15 @@ body{font-size:16px;line-height:1.65;background:#fbf9f5}
   .about-image{height:330px}
   .about-copy h2{font-size:40px}
 }
+
+/* Fixed controls stay available while browsing the catalog. */
+.search-glyph{display:inline-block;width:15px;height:15px;border:1.8px solid currentColor;border-radius:50%;position:relative}
+.search-glyph:after{content:"";position:absolute;width:7px;height:1.8px;background:currentColor;right:-5px;bottom:-2px;transform:rotate(45deg);transform-origin:left center}
+.icon-button{width:30px;height:30px;display:grid;place-items:center;padding:0}
+.search-field>.search-glyph{flex:0 0 auto;margin:0 4px 0 2px;color:var(--muted)}
+.floating-bag{position:fixed;right:28px;bottom:28px;width:58px;height:58px;border:0;border-radius:50%;background:var(--ink);color:var(--ivory);display:grid;place-items:center;z-index:12;box-shadow:0 10px 24px rgba(29,27,25,.2);transition:transform .2s,background .2s}
+.floating-bag:hover{transform:translateY(-3px);background:#3a332d}
+.bag-glyph{width:20px;height:18px;border:1.8px solid currentColor;border-radius:2px;position:relative;margin-top:4px}
+.bag-glyph:before{content:"";position:absolute;width:9px;height:7px;border:1.8px solid currentColor;border-bottom:0;border-radius:8px 8px 0 0;left:3.7px;top:-8px}
+.floating-bag-count{position:absolute;top:-3px;right:-3px;min-width:21px;height:21px;padding:0 4px;border-radius:50%;background:var(--gold);color:#fff;font-size:11px;display:grid;place-items:center}
+@media(max-width:480px){.floating-bag{right:16px;bottom:16px}}

@@ -39,7 +39,7 @@ function addToCart(id, quantity = 1) {
   const existing = state.cart.find((item) => item.id === id); existing ? existing.quantity += quantity : state.cart.push({ id, quantity });
   saveCart(); updateCartCount(); renderCart(); showToast(`${product.name} added to your bag.`);
 }
-function updateCartCount() { $('#cart-count').textContent = state.cart.reduce((total, item) => total + item.quantity, 0); }
+function updateCartCount() { const count = state.cart.reduce((total, item) => total + item.quantity, 0); $('#cart-count').textContent = count; $('#floating-bag-count').textContent = count; }
 function cartDetails() { return state.cart.map((item) => ({ ...item, product: state.products.find((product) => product.id === item.id) })).filter((item) => item.product); }
 function renderCart() {
   const items = cartDetails(); const content = $('#cart-content'); const footer = $('#cart-footer');
@@ -79,7 +79,7 @@ function bindEvents() {
   $('#sort-select').addEventListener('change', (event) => { state.sort = event.target.value; renderProducts(); });
   $('#reset-filters').addEventListener('click', () => { state.category = 'All'; state.search = ''; $('#search-input').value = ''; $$('.filter-button').forEach((item) => item.classList.toggle('active', item.dataset.category === 'All')); renderProducts(); });
   $$('.collection-card').forEach((card) => card.addEventListener('click', () => { $('#shop').scrollIntoView(); $(`[data-category="${card.dataset.collection}"]`).click(); }));
-  $('#cart-button').addEventListener('click', () => toggleCart(true)); $('#close-cart').addEventListener('click', () => toggleCart(false)); $('#drawer-backdrop').addEventListener('click', () => toggleCart(false));
+  $('#cart-button').addEventListener('click', () => toggleCart(true)); $('#floating-bag').addEventListener('click', () => toggleCart(true)); $('#close-cart').addEventListener('click', () => toggleCart(false)); $('#drawer-backdrop').addEventListener('click', () => toggleCart(false));
   $('#modal-add-button').addEventListener('click', () => { addToCart(state.selectedProduct.id, Number($('#modal-quantity').value)); closeModal(); });
   $$('[data-close-modal]').forEach((button) => button.addEventListener('click', closeModal)); $('#product-modal').addEventListener('click', (event) => { if (event.target === $('#product-modal')) closeModal(); });
   $('#header-search-button').addEventListener('click', () => { $('#shop').scrollIntoView(); setTimeout(() => $('#search-input').focus(), 400); });
