@@ -21,7 +21,7 @@ body{font-size:16px;line-height:1.65;background:#fbf9f5}
 .hero-content{padding-top:145px}
 .hero h1{font-size:clamp(58px,8vw,104px);max-width:700px}
 .hero-copy{font-size:18px;line-height:1.6;max-width:420px;color:#51483e}
-.eyebrow{font-size:12px;letter-spacing:.24em}
+.eyebrow{font-size:12px;letter-spacing:.24em,color:var(--gold)}
 .button{padding:16px 27px;font-size:13px;min-height:50px}
 .hero-bottle{right:20%;bottom:-22px;transform:scale(1.12) rotate(7deg)}
 .hero-orbit{right:5%;top:30px}
@@ -113,4 +113,22 @@ body{font-size:16px;line-height:1.65;background:#fbf9f5}
 .bag-glyph{width:20px;height:18px;border:1.8px solid currentColor;border-radius:2px;position:relative;margin-top:4px}
 .bag-glyph:before{content:"";position:absolute;width:9px;height:7px;border:1.8px solid currentColor;border-bottom:0;border-radius:8px 8px 0 0;left:3.7px;top:-8px}
 .floating-bag-count{position:absolute;top:-3px;right:-3px;min-width:21px;height:21px;padding:0 4px;border-radius:50%;background:var(--gold);color:#fff;font-size:11px;display:grid;place-items:center}
+.modal-backdrop{z-index:50}
 @media(max-width:480px){.floating-bag{right:16px;bottom:16px}}
+
+/* Keep transient messages clear of the fixed bag control on every viewport. */
+.toast-region{left:50%;right:auto;bottom:24px;transform:translateX(-50%);align-items:center}
+.toast{max-width:min(420px,calc(100vw - 32px));text-align:center}
+@media(max-width:850px){
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .product-card{min-width:0}
+  .cart-drawer{width:min(440px,100vw)}
+}
+@media(max-width:480px){
+  .toast-region{bottom:88px}
+  .toast{width:max-content;min-width:0}
+  .nav{width:calc(100% - 32px)}
+  .nav-actions{margin-right:0}
+  .product-card h3,.product-description{overflow-wrap:anywhere}
+  .floating-bag{right:16px;bottom:16px}
+}

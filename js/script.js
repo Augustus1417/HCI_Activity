@@ -1,7 +1,7 @@
 const state = { products: [], cart: loadCart(), category: 'All', search: '', sort: 'featured', selectedProduct: null, checkoutStep: 1, shipping: {} };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
-const money = (value) => `$${value.toFixed(2)}`;
+const money = (value) => `₱${value.toFixed(2)}`;
 
 function loadCart() {
   try { return JSON.parse(localStorage.getItem('aurelia-cart') || '[]'); }
