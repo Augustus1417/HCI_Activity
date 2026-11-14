@@ -114,6 +114,8 @@ body{font-size:16px;line-height:1.65;background:#fbf9f5}
 .bag-glyph:before{content:"";position:absolute;width:9px;height:7px;border:1.8px solid currentColor;border-bottom:0;border-radius:8px 8px 0 0;left:3.7px;top:-8px}
 .floating-bag-count{position:absolute;top:-3px;right:-3px;min-width:21px;height:21px;padding:0 4px;border-radius:50%;background:var(--gold);color:#fff;font-size:11px;display:grid;place-items:center}
 .modal-backdrop{z-index:50}
+.modal-backdrop{overflow-y:auto;align-items:start}
+.product-modal{max-height:calc(100vh - 40px);overflow-y:auto}
 @media(max-width:480px){.floating-bag{right:16px;bottom:16px}}
 
 /* Keep transient messages clear of the fixed bag control on every viewport. */
@@ -129,6 +131,8 @@ body{font-size:16px;line-height:1.65;background:#fbf9f5}
   .toast{width:max-content;min-width:0}
   .nav{width:calc(100% - 32px)}
   .nav-actions{margin-right:0}
+  .modal-backdrop{padding:12px}
+  .product-modal{max-height:calc(100vh - 24px)}
   .product-card h3,.product-description{overflow-wrap:anywhere}
   .floating-bag{right:16px;bottom:16px}
 }
